@@ -1,4 +1,5 @@
-- hosts: workstation
+- name: Playbook to delete Open Stack server instances (Nuke QA env)
+  hosts: workstation
   become: yes
   roles:
-    - osp-instance-delete
+   - osp-instance-delete

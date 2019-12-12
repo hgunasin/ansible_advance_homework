@@ -1,4 +1,6 @@
-- hosts: tag_instance_filter_three_tier_app_psrivast_redhat_com
+---
+- name: Playbook to check AWS instances status
+  hosts: tag_instance_filter_three_tier_app_hgunasin*
   gather_facts: false
   tasks:
   - name: Check the instances status
@@ -10,4 +12,3 @@
     delegate_to: localhost
     with_items:
       - "{{ inventory_hostname }}"
-        

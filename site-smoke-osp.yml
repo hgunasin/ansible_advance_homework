@@ -1,13 +1,16 @@
-- hosts: workstation
+- name: Playbook to run Smoke Test of 3-tier app on OSP
+  hosts: workstation
   gather_facts: false
   tasks:
-  - name: OpenStack servers
+
+  - name: Get OpenStack servers inventory
     os_server_facts:
      cloud: ospcloud
      server: 'frontend'
     register: openstack_info
     tags:
       - osp.smoke
+
   - name: Curl website
     uri:
      url: "http://{{item.public_v4}}"

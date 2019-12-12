@@ -1,10 +1,10 @@
-- hosts: workstation
+- name: Playbook for deploying 3 tier app
+  hosts: workstation
   gather_facts: true
   roles:
   - name: osp-facts
 
 # Setup front-end load balancer tier
-
 
 - name: setup load-balancer tier
   hosts: frontends
@@ -15,7 +15,7 @@
 
 # Setup application servers tier
 
-- name: setup app tier
+- name: setup application tier
   hosts: apps
   become: yes
   gather_facts: false
@@ -30,4 +30,4 @@
   hosts: appdbs
   roles:
     - {name: base-config, tags: base-config}
-    - {name: geerlingguy.postgresql, tags: [dbs, postgres]}
+    - {name: db-tier, tags: [dbs, postgres]}

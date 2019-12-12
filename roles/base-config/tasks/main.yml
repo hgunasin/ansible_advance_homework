@@ -1,12 +1,16 @@
 ---
-# Initial, common, system setup steps
+# tasks file for base-config. yum clean cannot be used with yum module as per ansible documentation
+  - name: Run yum clean
+    shell: yum clean all
+    
+  - name: Install EPEL repos 
+    yum:
+      name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+      state: present 
 
-- name: enable sudo without tty for some ansible commands
-
-- name: enable repos
-# File /etc/yum.repos.d/open_three-tier-app.repo should be envrypted using vault
-
- 
-- name: install base tools and packages
-## Install httpie python-pip packages
-
+  - name: Install pip
+    yum:
+      name:
+        - python-pip
+        - gcc
+      state: latest
