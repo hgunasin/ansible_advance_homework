@@ -1,0 +1,41 @@
+---
+
+# tasks file for osp.servers
+- name: Creates db server instance and attaches a network and passes metadata to the instance
+  os_server:
+    cloud: ospcloud
+    name: "{{ db.name }}"
+    image: "{{ db.image }}"
+    meta: group={{ db.meta_group }},deployment_name={{ db.meta_deployment_name }} 
+    flavor: "{{ db.flavor }}"
+    security_groups: "{{ db.security_group }}"
+    key_name: "{{ db.key_name }}"
+    wait: yes
+    nics:
+    - net-name: int_network
+    userdata: |
+      #!/bin/bash
+      curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+      curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
+      cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
+
+- name: Add floating IP to db server
+  os_floating_ip:
+    cloud: ospcloud
+    server: "{{ db.name }}"
+    state: present
+    reuse: yes
+    network: ext_network
+    wait: true
+    timeout: 180
+  register: instance_floating_ip
+
+- name: Wait for db server to become available
+  wait_for:
+    host: "{{ instance_floating_ip.floating_ip.floating_ip_address }}"
+    port: 22
+    search_regex: OpenSSH
+    timeout: 600
+  delegate_to: "{{ inventory_hostname }}"
+  with_items: "{{ instance_floating_ip }}"
