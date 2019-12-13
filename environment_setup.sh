@@ -5,8 +5,8 @@ if [ ! -f /root/.ssh/mykey.pem ] ; then
    exit 1
 fi
 
-TOWER_GUID=cbc0
-OSP_GUID=45d2
+TOWER_GUID=532a
+OSP_GUID=fdf7
 OPENTLC_LOGIN=hgunasin-au1.ibm.com
 OPENTLC_PASSWORD=K1llmeifyoucan
 GITHUB_REPO=https://github.com/hgunasin/ansible_advance_homework
