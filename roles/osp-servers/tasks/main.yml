@@ -11,7 +11,7 @@
     security_groups: "{{ item.0.security_group }}"
     nics:
       - net-name: int_network
- #   meta: "{{ item.1 }}"
+    meta: "{{ item.1 }}"
  #   userdata: |
  #     #!/bin/bash
  #     curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
