@@ -8,7 +8,7 @@
     image: "{{ item.0.image }}"
     key_name: "{{ item.0.key_name }}"
     flavor: "{{ item.0.flavor }}"
-    security_groups: "{{ item.0.security_group }}"
+    security_group: "{{ item.0.security_group }}"
     nics:
       - net-name: int_network
     meta: "{{ item.1 }}"
