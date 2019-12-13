@@ -7,7 +7,7 @@ osp_servers:
     image: rhel-guest
     key_name: ansible_ssh
     flavor: m2.small
-    security_group: frontend
+    security_group: frontends
     meta:
       - { group: frontends, deployment_name: QA}
   app1:
