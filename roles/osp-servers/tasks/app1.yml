@@ -2,7 +2,7 @@
 
 # tasks file for osp.servers
 - name: Creates app1 server instance and attaches a network and passes metadata to the instance
-  os_server:
+  os-server:
     cloud: ospcloud
     name: "{{ app1.name }}"
     image: "{{ app1.image }}"
@@ -21,7 +21,7 @@
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
 
 - name: Add floating IP to app1 server
-  os_floating_ip:
+  os-floating-ip:
     cloud: ospcloud
     server: "{{ app1.name }}"
     state: present
