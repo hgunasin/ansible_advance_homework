@@ -6,7 +6,8 @@
     cloud: ospcloud
     name: "{{ item.0.name }}"
     image: "{{ item.0.image }}"
-    key_name: "{{ item.0.key_name }}"
+#    key_name: "{{ item.0.key_name }}"
+    key_name: ansible_key
     flavor: "{{ item.0.flavor }}"
     security_groups: "{{ item.0.security_group }}"
     nics:
