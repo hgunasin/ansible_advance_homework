@@ -36,4 +36,4 @@ osp_servers:
     flavor: m2.small
     security_group: db
     meta:
-      - { group: appdbs, deployment_name: QA}
+      - { group: appdbs, deployment_name: QA} 
