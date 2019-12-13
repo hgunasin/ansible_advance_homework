@@ -45,13 +45,13 @@
   tags:
     - test.servers
 
-# - name: Print records  
-#   debug:
-#     var: item.name
-#   with_items: 
-#   - "{{ openstack_servers}}"
-#   tags:
-#     - test.servers
+- name: Print records  
+  debug:
+   var: item.name
+  with_items: 
+  - "{{ openstack_servers}}"
+  tags:
+    - test.servers
 
 - name: Wait for server to be available
   wait_for:
