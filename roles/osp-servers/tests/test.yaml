@@ -1,0 +1,5 @@
+---
+sts: localhost
+  remote_user: root
+  roles:
+    - osp.servers
