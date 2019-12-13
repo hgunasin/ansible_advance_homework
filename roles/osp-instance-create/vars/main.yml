@@ -1,7 +1,7 @@
 ---
 # vars file for osp.servers
 osp_servers:
-  frontend
+  frontend:
     name: frontend
     state: present
     image: rhel-guest
