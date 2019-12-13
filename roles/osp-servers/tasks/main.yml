@@ -20,7 +20,7 @@
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
   with_subelements:
     - "{{osp_servers}}"
-  #  - meta
+    - meta
   tags:
   - test.servers
 
