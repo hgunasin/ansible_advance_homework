@@ -3,6 +3,6 @@
      cloud: ospcloud
      state: present
      name: m2.small
-     ram: 2048
-     vcpus: 1
+     ram: 4096
+     vcpus: 2
      disk: 10
