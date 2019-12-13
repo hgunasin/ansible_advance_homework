@@ -8,12 +8,12 @@
     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     state: present 
 
-- name: install pip
-  yum:
-    name:
-     - python-pip
-     - gcc
-
+#- name: install pip
+#  yum:
+#    name:
+#     - python-pip
+#     - gcc
+#
 - name: Install openstacksdk library
   pip:
     name: openstacksdk
