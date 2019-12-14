@@ -12,16 +12,6 @@
         - "HG: Key:{{item.value.security_group}}"
         - "HG: Key:{{item.value.key_name}}"
 
-
-        "HG: Key:db", 
-        "HG: Key:db", 
-        "HG: Key:rhel-guest", 
-        "HG: Key:appdbs", 
-        "HG: Key:QA", 
-        "HG: Key:db", 
-        "HG: Key:ansible_ssh"
-
-
   - name: Create an osp server instance
     os_server:
       cloud: ospcloud
