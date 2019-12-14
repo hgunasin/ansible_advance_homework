@@ -4,7 +4,7 @@
   - name: Create an osp server instance
     os_server:
       cloud: ospcloud
-      name: "{{ item.name }}"
+      name: "{{ item.value.name }}"
       image: "{{ item.value.image }}"
       meta: "group={{ item.value.meta[0].group }},deployment_name={{ item.value.meta[0].deployment_name }}"
       flavor: "{{ item.value.flavor }}"
