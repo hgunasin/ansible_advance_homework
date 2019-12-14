@@ -17,7 +17,7 @@
       cloud: ospcloud
       name: db
       image: rhel-guest
-      meta: "group=appdbs,deployment_name=QA"
+#      meta: "group=appdbs,deployment_name=QA"
       flavor: m2.small
       security_groups: db
       key_name: ansible_ssh
