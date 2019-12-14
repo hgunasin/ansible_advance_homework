@@ -3,7 +3,14 @@
 # tasks file for osp.servers
   - debug:
       msg:
-        - "HG: Key  {{item.key}}"
+        - "HG: Key:{{item.key}}"
+        - "HG: Key:{{item.value.name}}"
+        - "HG: Key:{{item.value.image}}"
+        - "HG: Key:{{item.value.meta[0].group}}"
+        - "HG: Key:{{item.value.meta[0].deployment_name}}"
+        - "HG: Key:{{item.value.flavor}}"
+        - "HG: Key:{{item.value.security_group}}"
+        - "HG: Key:{{item.value.key_name}}"
 
   - name: Create an osp server instance
     os_server:
