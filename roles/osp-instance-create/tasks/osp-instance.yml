@@ -1,6 +1,9 @@
 ---
 
 # tasks file for osp.servers
+  - name: Show osp details
+    debug: key=item.key, name=item.value.name
+
   - name: Create an osp server instance
     os_server:
       cloud: ospcloud
