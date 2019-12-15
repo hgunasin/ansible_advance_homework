@@ -5,7 +5,7 @@ osp_servers:
     name: frontend
     state: present
     image: rhel-guest
-    key_name: ansible_key
+    key_name: ansible_ssh
     flavor: m2.small
     security_group: frontend
     meta:
@@ -14,7 +14,7 @@ osp_servers:
     name: app1
     state: present
     image: rhel-guest
-    key_name: ansible_key
+    key_name: ansible_ssh
     flavor: m2.small
     security_group: apps
     meta:
@@ -23,7 +23,7 @@ osp_servers:
     name: app2
     state: present
     image: rhel-guest
-    key_name: ansible_key
+    key_name: ansible_ssh
     flavor: m2.small
     security_group: apps
     meta:
@@ -32,7 +32,7 @@ osp_servers:
     name: db
     state: present
     image: rhel-guest
-    key_name: ansible_key
+    key_name: ansible_ssh
     flavor: m2.small
     security_group: db
     meta:

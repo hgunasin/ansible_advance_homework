@@ -20,7 +20,7 @@
       meta: "group={{ item.value.meta[0].group }},deployment_name={{ item.value.meta[0].deployment_name }}"
       flavor: "{{ item.value.flavor }}"
       security_groups: "{{ item.value.security_group }}"
-#      key_name: "{{ item.value.key_name }}"
+      key_name: "{{ item.value.key_name }}"
       wait: yes
       nics:
       - net-name: int_network
