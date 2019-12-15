@@ -3,4 +3,4 @@
 - name: restart tomcat
   service:
     name: tomcat
-    state: started
+    state: restarted
