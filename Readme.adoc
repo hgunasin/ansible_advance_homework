@@ -28,10 +28,10 @@
 
 	TOWER_GUID=
 	OSP_GUID=
-	OPENTLC_LOGIN=prasanna.holla-in.ibm.com
+	OPENTLC_LOGIN=<username-company.com>
 	OPENTLC_PASSWORD=
-	GITHUB_REPO=https://github.com/prasanna-holla/ansible_advance_homework
-	RH_MAIL_ID=prasanna.holla@in.ibm.com
+	GITHUB_REPO=https://github.com/<<username-company.com>>/ansible_advance_homework
+	RH_MAIL_ID=<username@company.com>
 
 6. Run the environment_setup script to setup workstation, isolated node, OSP components and configure tower
 
