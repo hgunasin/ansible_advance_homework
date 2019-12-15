@@ -1,18 +1,18 @@
 ---
 # tasks file for app-tier
-- name: install tomcat
+- name: install "{{ payload }}"
   yum:
-    name: tomcat
+    name: "{{ payload }}"
     state: latest
 
-- name: create tomcat root directory
+- name: create "{{ payload }}" root directory
   file:
     path: "{{ web_root }}"
     state: directory
 
-- name: start and enable tomcat at reboot
+- name: start and enable "{{ payload }}" at reboot
   service:
-    name: tomcat
+    name: "{{ payload }}"
     state: started
     enabled: yes
     
@@ -21,6 +21,6 @@
     src: index.html.j2
     dest: "{{ web_root }}/index.html"
     mode: 0644
-  notify: restart tomcat
+  notify: restart "{{ payload }}"
 
     
