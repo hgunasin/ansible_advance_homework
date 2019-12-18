@@ -8,7 +8,7 @@ fi
 TOWER_GUID=532a
 OSP_GUID=fdf7
 OPENTLC_LOGIN=hgunasin-au1.ibm.com
-OPENTLC_PASSWORD=K1llmeifyoucan
+OPENTLC_PASSWORD=xxx
 GITHUB_REPO=https://github.com/hgunasin/ansible_advance_homework
 JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
 REGION=us-east-1
